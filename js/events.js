@@ -1,5 +1,6 @@
 // events.js
 import { addNote } from "./storage.js";
+import { renderNotes } from "./ui.js";
 
 // Event Listener'ları grup olarak tutma
 export const setupEventListeners = () => {
@@ -19,6 +20,8 @@ export const setupEventListeners = () => {
         if (title && content) {
             // Başlık ve İçeriği localStorage'e kaydetme
             addNote({title,content});
+            // localStorage'e kayıt edilen notların ekranda güncellenmesi
+            renderNotes();
         } else {
             alert("Başlık ve içerik boş bırakılamaz.");
         }
