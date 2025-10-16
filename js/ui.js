@@ -21,10 +21,10 @@ export const renderNotes = () => {
             <div class="d-flex justify-content-between">
                 <h5>${title}</h5>
                 <div>
-                    <button class="btn btn-warning btn-sm" data-index="${index}">
+                    <button class="btn btn-warning btn-sm" data-index="${index}" data-action="edit">
                         <i class="bi bi-pencil-square"></i>
                     </button>
-                    <button class="btn btn-danger btn-sm" data-index="${index}">
+                    <button class="btn btn-danger btn-sm" data-index="${index}" data-action="delete">
                         <i class="bi bi-trash-fill"></i>
                     </button>
                 </div>

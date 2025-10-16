@@ -24,3 +24,16 @@ export const addNote = (note) => {
     saveNotes(notes);
 
 }
+
+// LocalStorage'den note silme
+export const deleteNote = (index) => {
+
+     // Varsa notları LocalStorage'den okuma
+    const notes = getNotes();
+
+    // index'e gelen notu, notes dizisinden silme
+    notes.splice(index,1);
+
+    // Silinen notla beraber elde edilen yeni notları kaydetme
+    saveNotes(notes); 
+}

@@ -1,5 +1,5 @@
 // events.js
-import { addNote } from "./storage.js";
+import { addNote, deleteNote } from "./storage.js";
 import { renderNotes } from "./ui.js";
 
 // Event Listener'ları grup olarak tutma
@@ -33,6 +33,19 @@ export const setupEventListeners = () => {
     });
 
     // Ekle ve Düzenle Butonlarının Event'i
-    // noteList.addEventListener("click",);
+    noteList.addEventListener("click",(e) => {
+        const btn = e.target.closest("button");
+        // Tıklanan öğeye yakın bir buton yoksa sonraki kodları çalıştırma DUR!
+        if (!btn) return;
+        // Tıklanan butona tanımlı data-action'a ait action değerine göre kodları çalıştırma
+        const action = btn.dataset.action;
+        const index = btn.dataset.index;
+        if (action === "delete") {
+            deleteNote(index);
+            renderNotes();
+        }else if (action==="edit") {
+            
+        }
+    });
 };
 
