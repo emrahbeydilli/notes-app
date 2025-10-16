@@ -7,14 +7,14 @@ export const getNotes = () => {
 }
 
 // Notları kaydetme
-const saveNotes = (notes) => {
-    localStorage.setItem("notes",JSON.stringify(notes));
+const saveNotes = (newNotes) => {
+    localStorage.setItem("notes",JSON.stringify(newNotes));
 }
 
 // LocalStorage'e not ekleme
 export const addNote = (note) => {
 
-    // Varsa notları okuma
+    // Varsa notları LocalStorage'den okuma
     const notes = getNotes();
 
     // Yeni notu (note nesnesini) varolan notlara ekleme

@@ -8,6 +8,7 @@ export const setupEventListeners = () => {
     const addNoteBtn = document.querySelector("#addNoteBtn");
     const noteTitle = document.querySelector("#noteTitle");
     const noteContent = document.querySelector("#noteContent");
+    const noteList = document.querySelector("#noteList");
     
     // Not Ekleme Event'i
     addNoteBtn.addEventListener("click",() => {
@@ -22,10 +23,16 @@ export const setupEventListeners = () => {
             addNote({title,content});
             // localStorage'e kayıt edilen notların ekranda güncellenmesi
             renderNotes();
+            // Not eklediğim Başlık ve İçerik alanlarının temizlenmesi
+            noteTitle.value = "";
+            noteContent.value = "";
         } else {
             alert("Başlık ve içerik boş bırakılamaz.");
         }
 
     });
+
+    // Ekle ve Düzenle Butonlarının Event'i
+    // noteList.addEventListener("click",);
 };
 
