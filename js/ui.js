@@ -15,9 +15,9 @@ export const renderNotes = () => {
     notes.forEach((note,index) => {
         // ES6 Object Destructuring (Nesneyi değişkenlere ayırma)
         const {title,content} = note;
-        const li = document.createElement("li");
-        li.className = "list-group-item mb-5";
-        li.innerHTML = `
+        const div = document.createElement("div");
+        div.className = "card mb-2 p-3"
+        div.innerHTML = `
             <div class="d-flex justify-content-between">
                 <h5>${title}</h5>
                 <div>
@@ -33,7 +33,7 @@ export const renderNotes = () => {
             <p>${content}</p>
         `;
         // nodeList ID'sine sahip <ul> etiketinin içine li'leri doldurmak
-        noteList.appendChild(li);
+        noteList.appendChild(div);
     });
 
 }
