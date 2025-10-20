@@ -16,7 +16,7 @@ export const renderNotes = () => {
         // ES6 Object Destructuring (Nesneyi değişkenlere ayırma)
         const {title,content} = note;
         const div = document.createElement("div");
-        div.className = "card mb-2 p-3"
+        div.className = "card mb-2 p-3 bg-light"
         div.innerHTML = `
             <div class="d-flex justify-content-between">
                 <h5>${title}</h5>
