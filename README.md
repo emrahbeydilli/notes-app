@@ -20,16 +20,16 @@ Vanilla JavaScript (ES6+), Bootstrap 5 ve LocalStorage kullanılarak geliştiril
 
 ## 📁 Dosya Yapısı
 
-- project-root/
-  - index.html           # Uygulama ana sayfası
-  - css/
-    - styles.css         # Özel stil dosyası
-  - js/
-    - app.js             # Uygulama başlatma
-    - storage.js         # LocalStorage CRUD fonksiyonları
-    - ui.js              # DOM render ve modal yönetimi
-    - events.js          # Event listener’lar
-  - README.md
+project-root/
+├─ index.html           # Uygulama ana sayfası
+├─ css/
+│   └─ styles.css       # Özel stil dosyası
+├─ js/
+│   ├─ app.js           # Uygulama başlatma
+│   ├─ storage.js       # LocalStorage CRUD fonksiyonları
+│   ├─ ui.js            # DOM render ve modal yönetimi
+│   └─ events.js        # Event listener’lar
+└─ README.md
 
 
 ## 🚀 Kurulum ve Kullanım
