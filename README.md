@@ -34,15 +34,11 @@ Vanilla JavaScript (ES6+), Bootstrap 5 ve LocalStorage kullanılarak geliştiril
 
 ## 🚀 Kurulum ve Kullanım
 
-1. Proje dosyalarını bilgisayarınıza indirin veya klonlayın: git clone <repository-url>
-
-2. index.html dosyasını tarayıcıda açın.
-
-3. Başlık ve içerik girip Kaydet butonuna basarak not ekleyin.
-
-4. Notları düzenlemek için kalem ikonuna, silmek için çöp ikonuna tıklayın.
-
-5. Düzenleme işlemleri modal üzerinden yapılır ve değişiklikler LocalStorage’a kaydedilir.
+- Proje dosyalarını bilgisayarınıza indirin veya klonlayın: git clone <repository-url>
+- index.html dosyasını tarayıcıda açın.
+- Başlık ve içerik girip Kaydet butonuna basarak not ekleyin.
+- Notları düzenlemek için kalem ikonuna, silmek için çöp ikonuna tıklayın.
+- Düzenleme işlemleri modal üzerinden yapılır ve değişiklikler LocalStorage’a kaydedilir.
 
 
 ## 🛠️ Teknolojiler
