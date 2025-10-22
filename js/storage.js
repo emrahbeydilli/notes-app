@@ -8,7 +8,7 @@ export const getNotes = () => {
 
 // Notları kaydetme
 const saveNotes = (newNotes) => {
-    localStorage.setItem("notes",JSON.stringify(newNotes));
+    localStorage.setItem("notes", JSON.stringify(newNotes));
 }
 
 // LocalStorage'e not ekleme
@@ -28,12 +28,25 @@ export const addNote = (note) => {
 // LocalStorage'den note silme
 export const deleteNote = (index) => {
 
-     // Varsa notları LocalStorage'den okuma
+    // Varsa notları LocalStorage'den okuma
     const notes = getNotes();
 
     // index'e gelen notu, notes dizisinden silme
-    notes.splice(index,1);
+    notes.splice(index, 1);
 
     // Silinen notla beraber elde edilen yeni notları kaydetme
-    saveNotes(notes); 
+    saveNotes(notes);
 }
+
+// Not güncelleme (index ile)
+export const updateNote = (index, { title, content }) => {
+
+    // Varsa notları LocalStorage'den okuma
+    const notes = getNotes();
+
+    // İlgili notu düzenleme
+    notes[index] = { title, content };
+
+    // Düzenlenen notla beraber notları kaydetme
+    saveNotes(notes);
+};

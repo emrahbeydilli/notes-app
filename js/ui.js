@@ -1,10 +1,10 @@
 // ui.js
-import { getNotes } from "./storage.js";
+import { getNotes, updateNote } from "./storage.js";
+
+// Eklenecek not listesinin HTML kodundaki yerinin tanımlanması
+const noteList = document.querySelector("#noteList");
 
 export const renderNotes = () => {
-    // Eklenecek not listesinin HTML kodundaki yerinin tanımlanması
-    const noteList = document.querySelector("#noteList");
-
     // Varsa nodeList ID'sine sahip ul etiketinin innerHTML'ini temizleme
     noteList.innerHTML = "";
 
@@ -12,9 +12,9 @@ export const renderNotes = () => {
     const notes = getNotes();
 
     // Notların ekranda listeler halinde görüntülenmesi
-    notes.forEach((note,index) => {
+    notes.forEach((note, index) => {
         // ES6 Object Destructuring (Nesneyi değişkenlere ayırma)
-        const {title,content} = note;
+        const { title, content } = note;
         const div = document.createElement("div");
         div.className = "card mb-2 p-3 bg-light"
         div.innerHTML = `
@@ -37,3 +37,26 @@ export const renderNotes = () => {
     });
 
 }
+
+// Modal input alanlarını doldurmak için yardımcı fonksiyon
+const editTitle = document.getElementById("editTitle");
+const editContent = document.getElementById("editContent");
+const saveBtn = document.getElementById("saveEditBtn");
+const modal = new bootstrap.Modal(document.getElementById("editModal"));
+
+export const openEditModal = (note, index) => {
+    editTitle.value = note.title;
+    editContent.value = note.content;
+
+    saveBtn.addEventListener("click", () => {
+        note.title = editTitle.value.trim();
+        note.content = editContent.value.trim();
+
+        updateNote(index, note);
+        renderNotes();
+
+        modal.hide();
+    }, {once: true});
+
+    modal.show();
+};

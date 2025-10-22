@@ -1,6 +1,6 @@
 // events.js
-import { addNote, deleteNote } from "./storage.js";
-import { renderNotes } from "./ui.js";
+import { addNote, deleteNote, getNotes } from "./storage.js";
+import { openEditModal, renderNotes } from "./ui.js";
 
 // Event Listener'ları grup olarak tutma
 export const setupEventListeners = () => {
@@ -39,12 +39,13 @@ export const setupEventListeners = () => {
         if (!btn) return;
         // Tıklanan butona tanımlı data-action'a ait action değerine göre kodları çalıştırma
         const action = btn.dataset.action;
-        const index = btn.dataset.index;
+        const index = Number(btn.dataset.index);
         if (action === "delete") {
             deleteNote(index);
             renderNotes();
         }else if (action==="edit") {
-            
+            const note = getNotes()[index];
+            openEditModal(note, index);
         }
     });
 };
