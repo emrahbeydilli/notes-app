@@ -34,7 +34,7 @@ Vanilla JavaScript (ES6+), Bootstrap 5 ve LocalStorage kullanılarak geliştiril
 
 ## 🚀 Kurulum ve Kullanım
 
-- Proje dosyalarını bilgisayarınıza indirin veya klonlayın: git clone <repository-url>
+- Proje dosyalarını bilgisayarınıza indirin veya klonlayın
 - index.html dosyasını tarayıcıda açın.
 - Başlık ve içerik girip Kaydet butonuna basarak not ekleyin.
 - Notları düzenlemek için kalem ikonuna, silmek için çöp ikonuna tıklayın.
