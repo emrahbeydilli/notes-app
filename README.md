@@ -45,12 +45,9 @@ Vanilla JavaScript (ES6+), Bootstrap 5 ve LocalStorage kullanılarak geliştiril
 
 5. Düzenleme işlemleri modal üzerinden yapılır ve değişiklikler LocalStorage’a kaydedilir.
 
-🛠 Teknolojiler
+## 🚀 Teknolojiler
 
-HTML5 & CSS3
-
-Bootstrap 5 (responsive tasarım ve modal)
-
-Vanilla JavaScript (ES6+)
-
-LocalStorage (tarayıcıda veri saklama)
+- HTML5 & CSS3
+- Bootstrap 5 (responsive tasarım ve modal)
+- Vanilla JavaScript (ES6+)
+- LocalStorage (tarayıcıda veri saklama)
