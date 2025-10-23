@@ -9,9 +9,9 @@ export const setupEventListeners = () => {
     const noteTitle = document.querySelector("#noteTitle");
     const noteContent = document.querySelector("#noteContent");
     const noteList = document.querySelector("#noteList");
-    
+
     // Not Ekleme Event'i
-    addNoteBtn.addEventListener("click",() => {
+    addNoteBtn.addEventListener("click", () => {
 
         // Başlık ve İçerik bilgisini alma
         const title = noteTitle.value.trim();
@@ -20,7 +20,7 @@ export const setupEventListeners = () => {
         // Başlık ve İçeriğin boş olmamasını kontrol etme
         if (title && content) {
             // Başlık ve İçeriği localStorage'e kaydetme
-            addNote({title,content});
+            addNote({ title, content });
             // localStorage'e kayıt edilen notların ekranda güncellenmesi
             renderNotes();
             // Not eklediğim Başlık ve İçerik alanlarının temizlenmesi
@@ -32,8 +32,16 @@ export const setupEventListeners = () => {
 
     });
 
+    // Enter tuşuyla ekleme
+    noteContent.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            addNoteBtn.click();
+        }
+    });
+
     // Ekle ve Düzenle Butonlarının Event'i
-    noteList.addEventListener("click",(e) => {
+    noteList.addEventListener("click", (e) => {
         const btn = e.target.closest("button");
         // Tıklanan öğeye yakın bir buton yoksa sonraki kodları çalıştırma DUR!
         if (!btn) return;
@@ -43,7 +51,7 @@ export const setupEventListeners = () => {
         if (action === "delete") {
             deleteNote(index);
             renderNotes();
-        }else if (action==="edit") {
+        } else if (action === "edit") {
             const note = getNotes()[index];
             openEditModal(note, index);
         }
